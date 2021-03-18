@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Product;
+use App\Models\Product;
+use App\Models\User;
+
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -22,7 +25,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->lastName,
+            'user_id' => User::all()->random()->id,
+            'category'=> $this->faker->lastName,
+            'date' => $this->faker->dateTime(),
+            'description' => $this->faker->text(20)
         ];
     }
 }
