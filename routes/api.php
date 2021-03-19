@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+Use App\Models\Product;
+use App\Http\Resources\ListProductsResource;
+//use App\Http\Controllers\Api\ListProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +22,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// //List Products
-// Route::get('articles', 'ArticleController@index');
+Route::get('products', function(Request $request){
+            //  $products = Product::where('user_id', Auth::user()->id)
+            //  ->get();
+             
+            $products = ListProductsResource::collection(Product::all());
+            //$products = Product::all();
 
-// //List single product
-// Route::get('articles/{id}', 'ArticleController@store');
 
-// //Create new product
-// Route::post('articles', 'ArticleController@store');
-
-// //Update product
-// Route::put('articles', 'ArticleController@store');
-
-// //Delete product
-// Route::delete('articles', 'ArticleController@destroy');
+        return $products;
+});

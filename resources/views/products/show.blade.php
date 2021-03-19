@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
   <div class="flex justify-center">
     <div class="w-8/12 bg-white p-6 rounded-lg">
 
-      @if ($products->count())
+      <!-- @if ($products->count())
         @foreach ($products as $products)
           <div class="mb-4">
             <h3>{{ $products->name }}</h3>
@@ -16,8 +17,14 @@
         @endforeach
       @else 
         <p>There are no products</p>
-      @endif
+      @endif -->
+      <div id="app">
+        <div class="container">
+          <show-items></show-items>
+        </div>
+      </div>
 
     </div>
   </div>
+
 @endsection 

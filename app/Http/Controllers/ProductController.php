@@ -10,10 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function showAllProducts(){
         //$products = Product::get();
-        //dd(Auth::user()->id);
-
          $products = Product::where('user_id', Auth::user()->id)
              ->get(); 
 
@@ -21,6 +19,13 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+
+    // public function singleProduct(){
+    //     $products = Product::findOrFail($id);
+
+    //     return view('products.showOne'), [
+    //     ]
+    // }
 
     public function createForm(){
 

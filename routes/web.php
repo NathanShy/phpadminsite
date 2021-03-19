@@ -38,5 +38,9 @@ Route::get('/products/create', [ProductController::class, 'createForm'])
 Route::post('/products/create', [ProductController::class, 'store']);
 
 //Show Products
-Route::get('/products', [ProductController::class, 'index'])
+Route::get('/products', [ProductController::class, 'showAllProducts'])
     ->name('showProducts');
+
+//Show Single Product
+Route::get('/products/{id}', [ProductController::class, 'index'])
+    ->name('showSingleProduct');
