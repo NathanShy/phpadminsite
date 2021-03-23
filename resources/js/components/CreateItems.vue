@@ -1,14 +1,14 @@
 <template>
   <div>
-    <form @submit="checkForm" @submit.prevent="addProduct" >
+    <form @submit="checkForm" @submit.prevent="addProduct">
       <div class="mb-4">
-
-        <p v-if="errors.length">
+        <h1><b>Create Products</b></h1>
+        <!-- <p v-if="errors.length">
           <b>Please correct the following error(s):</b>
           <ul>
             <li v-for="error in errors">{{ error }}</li>
           </ul>
-        </p>
+        </p> -->
 
         <label for="name">Name</label>
         <input
@@ -100,7 +100,7 @@ export default {
           this.product.description = "";
 
           alert("Product added");
-          //window.location.href = "http://127.0.0.1:8000/products";
+          window.location.href = "../products";
         })
         .catch((err) => console.log(err));
     },

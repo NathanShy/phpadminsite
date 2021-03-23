@@ -1945,7 +1945,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.product.category = "";
         _this.product.date = "";
         _this.product.description = "";
-        alert("Product added"); //window.location.href = "http://127.0.0.1:8000/products";
+        alert("Product added");
+        window.location.href = "../products";
       })["catch"](function (err) {
         return console.log(err);
       });
@@ -1987,6 +1988,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
 //
 //
 //
@@ -19930,19 +19933,7 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "mb-4" }, [
-          _vm.errors.length
-            ? _c("p", [
-                _c("b", [_vm._v("Please correct the following error(s):")]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  _vm._l(_vm.errors, function(error) {
-                    return _c("li", [_vm._v(_vm._s(error))])
-                  }),
-                  0
-                )
-              ])
-            : _vm._e(),
+          _vm._m(0),
           _vm._v(" "),
           _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
           _vm._v(" "),
@@ -20059,12 +20050,18 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _vm._m(1)
       ]
     )
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [_c("b", [_vm._v("Create Products")])])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -20105,145 +20102,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("ITEMS")]),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", [
-      _c(
-        "div",
-        {
-          staticClass:
-            "bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass:
-                "hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"
-            },
-            [
-              _c("div", [
-                _c("p", { staticClass: "text-sm text-gray-700" }, [
-                  _vm._v("\n            Page\n            "),
-                  _c("span", { staticClass: "font-medium" }, [
-                    _vm._v(_vm._s(_vm.pagination.current_page))
-                  ]),
-                  _vm._v("\n            of\n            "),
-                  _c("span", { staticClass: "font-medium" }, [
-                    _vm._v(_vm._s(_vm.pagination.last_page))
-                  ]),
-                  _vm._v("\n            results\n          ")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c(
-                  "nav",
-                  {
-                    staticClass:
-                      "relative z-0 inline-flex rounded-md shadow-sm -space-x-px",
-                    attrs: { "aria-label": "Pagination" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
-                        class: [{ disabled: !_vm.pagination.prev_page_url }],
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.fetchProducts(
-                              _vm.pagination.prev_page_url
-                            )
-                          }
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "sr-only" }, [
-                          _vm._v("Previous")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "svg",
-                          {
-                            staticClass: "h-5 w-5",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                "fill-rule": "evenodd",
-                                d:
-                                  "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
-                                "clip-rule": "evenodd"
-                              }
-                            })
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
-                        class: [{ disabled: !_vm.pagination.next_page_url }],
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.fetchProducts(
-                              _vm.pagination.next_page_url
-                            )
-                          }
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "sr-only" }, [
-                          _vm._v("Next")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "svg",
-                          {
-                            staticClass: "h-5 w-5",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                "fill-rule": "evenodd",
-                                d:
-                                  "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-                                "clip-rule": "evenodd"
-                              }
-                            })
-                          ]
-                        )
-                      ]
-                    )
-                  ]
-                )
-              ])
-            ]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", [
+      _vm._m(1),
+      _vm._v(" "),
       _c(
         "form",
         {
@@ -20371,63 +20234,211 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(2)
         ]
-      )
-    ]),
-    _vm._v(" "),
-    0 < _vm.products.length
-      ? _c(
+      ),
+      _vm._v(" "),
+      0 < _vm.products.length
+        ? _c(
+            "div",
+            _vm._l(_vm.products, function(product) {
+              return _c("a", { key: product.id, staticClass: "mb-2" }, [
+                _c("div", { staticClass: "mb-4" }, [
+                  _c("h2", [_c("strong", [_vm._v(_vm._s(product.name))])]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("Product Image")]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("strong", [_vm._v(" " + _vm._s(product.category))])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(product.description))]),
+                  _vm._v(" "),
+                  _c("p", [_c("small", [_vm._v(_vm._s(product.date))])]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "bg-blue-600 text-white p-2 rounded",
+                      on: {
+                        click: function($event) {
+                          return _vm.editProduct(product)
+                        }
+                      }
+                    },
+                    [_vm._v("\n            Edit\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "bg-red-600 text-white p-2 rounded",
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteProduct(product.id)
+                        }
+                      }
+                    },
+                    [_vm._v("\n            Delete\n          ")]
+                  )
+                ])
+              ])
+            }),
+            0
+          )
+        : _c("div", [_c("h2", [_vm._v("There are no products")])]),
+      _vm._v(" "),
+      _c("div", [
+        _c(
           "div",
-          _vm._l(_vm.products, function(product) {
-            return _c("a", { key: product.id, staticClass: "mb-2" }, [
-              _c("div", { staticClass: "mb-4" }, [
-                _c("h2", [_c("strong", [_vm._v(_vm._s(product.name))])]),
-                _vm._v(" "),
-                _c("h3", [_vm._v("Product Image")]),
-                _vm._v(" "),
-                _c("p", [
-                  _c("strong", [_vm._v(" " + _vm._s(product.category))])
+          {
+            staticClass:
+              "bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"
+              },
+              [
+                _c("div", [
+                  _c("p", { staticClass: "text-sm text-gray-700" }, [
+                    _vm._v("\n              Page\n              "),
+                    _c("span", { staticClass: "font-medium" }, [
+                      _vm._v(_vm._s(_vm.pagination.current_page))
+                    ]),
+                    _vm._v("\n              of\n              "),
+                    _c("span", { staticClass: "font-medium" }, [
+                      _vm._v(_vm._s(_vm.pagination.last_page))
+                    ]),
+                    _vm._v("\n              results\n            ")
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(product.description))]),
-                _vm._v(" "),
-                _c("p", [_c("small", [_vm._v(_vm._s(product.date))])]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "bg-blue-600 text-white p-2 rounded",
-                    on: {
-                      click: function($event) {
-                        return _vm.editProduct(product)
-                      }
-                    }
-                  },
-                  [_vm._v("\n          Edit\n        ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "bg-red-600 text-white p-2 rounded",
-                    on: {
-                      click: function($event) {
-                        return _vm.deleteProduct(product.id)
-                      }
-                    }
-                  },
-                  [_vm._v("\n          Delete\n        ")]
-                )
-              ])
-            ])
-          }),
-          0
+                _c("div", [
+                  _c(
+                    "nav",
+                    {
+                      staticClass:
+                        "relative z-0 inline-flex rounded-md shadow-sm -space-x-px",
+                      attrs: { "aria-label": "Pagination" }
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
+                          class: [{ disabled: !_vm.pagination.prev_page_url }],
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.fetchProducts(
+                                _vm.pagination.prev_page_url
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("Previous")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "h-5 w-5",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "fill-rule": "evenodd",
+                                  d:
+                                    "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
+                                  "clip-rule": "evenodd"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
+                          class: [{ disabled: !_vm.pagination.next_page_url }],
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.fetchProducts(
+                                _vm.pagination.next_page_url
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("Next")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "h-5 w-5",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "fill-rule": "evenodd",
+                                  d:
+                                    "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
+                                  "clip-rule": "evenodd"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]
         )
-      : _c("div", [_c("h2", [_vm._v("There are no products")])])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", { staticClass: "mb-2" }, [_c("b", [_vm._v("Products")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [_c("i", [_vm._v("Edit Product")])])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

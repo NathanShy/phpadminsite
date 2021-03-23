@@ -30,6 +30,9 @@
           <li>
             <a href="{{ route('showProducts') }}" class="p-3">Products</a>
           </li>
+          <li>
+            <a href="{{ route('createProducts') }}" class="p-3">Create Products</a>
+          </li>
         @endauth
       </ul>
 
