@@ -3,10 +3,19 @@
 @section('content')
   <div class="flex justify-center">
     <div class="w-8/12 bg-white p-6 rounded-lg">
-      <form action="{{ route('createProducts') }}" method="post">
+      <div id="app">
+        <div class="container">
+          <create-items></create-items>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection 
+
+      <!-- <form action="{{ route('createProducts') }}" method="post">
 
       <form action="{{route ('register') }}" method="post">
-        @csrf <!--Cross Site Request Forgery protection -->
+        @csrf
 
         <div class="mb-4">
           <label for="name">Name</label>
@@ -52,7 +61,4 @@
           <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Submit</button>
         </div>
 
-      </form>
-    </div>
-  </div>
-@endsection 
+      </form> -->

@@ -7,7 +7,11 @@
     <title>Admin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="user-id" content="{{ Auth::user()->id }}">
+    <meta name="csrf-token" content="{{ csrf_token()  }}" >
+    <script>window.Laravel = { csrfToken: '{{ csrf_token() }}' }</script>
+    @if (Auth::check())
+      <meta name="user-id" content="{{ Auth::user()->id }}">
+    @endif
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- <link rel="stylesheet" href="{{ mix('css/app.css') }}" /> -->
   </head>
@@ -19,12 +23,14 @@
         <li>
           <a href="{{ route('home') }}" class="p-3">Home</a>
         </li>
-        <li>
-          <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
-        </li>
-        <li>
-          <a href="{{ route('showProducts') }}" class="p-3">Products</a>
-        </li>
+        @auth
+          <li>
+            <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
+          </li>
+          <li>
+            <a href="{{ route('showProducts') }}" class="p-3">Products</a>
+          </li>
+        @endauth
       </ul>
 
       <ul class="flex items-center">
